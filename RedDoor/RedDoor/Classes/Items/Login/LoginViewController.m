@@ -27,8 +27,6 @@
 /** submit Button */
 @property (nonatomic, strong) UIButton *submitBtn;
 
-
-
 @end
 
 @implementation LoginViewController
@@ -37,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ICColorOfBackground_White;
-    
+  
     [self setupUI];
     [self UserNameView];
     [self PasswordView];
@@ -46,9 +44,11 @@
     [self forgetPwdBtnView];
     [self submitBtnState];
     [self addNotify];
-
+    
 }
 - (void)setupUI {
+    UIImage *logoImage = [UIImage imageNamed:@"login_logo"];
+    CGFloat logoImageScale = logoImage.size.height / logoImage.size.width;
     // Logo Icon ImageView
     self.logoImageView = [[UIImageView alloc]init];
     [self.logoImageView setImage:[UIImage imageNamed:@"login_logo"]];
@@ -57,9 +57,9 @@
     [self.view addSubview:self.logoImageView];
     [self.logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(60* AutoSizeScaleX);
+        make.top.equalTo(self.view).offset(100 * AutoSizeScaleX);
         make.width.mas_equalTo(160 * AutoSizeScaleX);
-        make.height.mas_equalTo(46 * AutoSizeScaleX);
+        make.height.equalTo(self.logoImageView.mas_width).multipliedBy(logoImageScale);
     }];
     // Loginbuttons BG View
     self.loginButtonsBGView =[[UIView alloc]init];
@@ -175,30 +175,30 @@
     [self.submitBtn setExclusiveTouch:YES];
     [self.submitBtn setTitle:@"Submit" forState:UIControlStateNormal];
     self.submitBtn.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
-    self.submitBtn.layer.cornerRadius = 10;
+    self.submitBtn.layer.cornerRadius = 3;
     self.submitBtn.layer.masksToBounds = YES;
     [self.loginButtonsBGView addSubview:self.submitBtn];
     [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.pwdTextField).offset(90* AutoSizeScaleX);
         make.left.equalTo(self.loginButtonsBGView).offset(4* AutoSizeScaleX);
         make.right.equalTo(self.loginButtonsBGView).offset(-4* AutoSizeScaleX);
-        make.height.mas_equalTo(50* AutoSizeScaleX);
+        make.height.mas_equalTo(44 * AutoSizeScaleX);
     }];
 }
 -(void)registerBtnView
 {
     //Register Button
-    UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [registerBtn addTarget:self action:@selector(registerBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [registerBtn setTitleColor:ICColorOfText_Gray forState:UIControlStateNormal];
-    [registerBtn setExclusiveTouch:YES];
-    registerBtn.layer.cornerRadius = 10;
-    [registerBtn setTitle:@"Register" forState:UIControlStateNormal];
-    registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    registerBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
-    registerBtn.layer.masksToBounds = YES;
-    [self.loginButtonsBGView addSubview:registerBtn];
-    [registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *forgotPasswordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [forgotPasswordBtn addTarget:self action:@selector(forgetPwdbtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [forgotPasswordBtn setTitleColor:ICColorOfText_Gray forState:UIControlStateNormal];
+    [forgotPasswordBtn setExclusiveTouch:YES];
+    forgotPasswordBtn.layer.cornerRadius = 10;
+    [forgotPasswordBtn setTitle:@"Forgot Password" forState:UIControlStateNormal];
+    forgotPasswordBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    forgotPasswordBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    forgotPasswordBtn.layer.masksToBounds = YES;
+    [self.loginButtonsBGView addSubview:forgotPasswordBtn];
+    [forgotPasswordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.submitBtn).offset(58* AutoSizeScaleX);
         make.left.equalTo(self.loginButtonsBGView).offset(4* AutoSizeScaleX);
         make.width.mas_equalTo(120* AutoSizeScaleX);
@@ -207,14 +207,14 @@
 }
 -(void)forgetPwdBtnView{
     //Forget password button
-    UIButton *forgotPasswordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [forgotPasswordBtn addTarget:self action:@selector(forgetPwdbtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    forgotPasswordBtn.titleLabel.font = ICFontOfTitle_Chinese_19;
-    [forgotPasswordBtn setTitle:@"注册" forState:UIControlStateNormal];
-    forgotPasswordBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [forgotPasswordBtn setTitleColor:ICColorOfText_Gray forState:UIControlStateNormal];
-    [self.loginButtonsBGView addSubview:forgotPasswordBtn];
-    [forgotPasswordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [registerBtn addTarget:self action:@selector(registerBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    registerBtn.titleLabel.font = ICFontOfTitle_Chinese_19;
+    [registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+    registerBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [registerBtn setTitleColor:ICColorOfText_Gray forState:UIControlStateNormal];
+    [self.loginButtonsBGView addSubview:registerBtn];
+    [registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.submitBtn).offset(58* AutoSizeScaleX);
         make.right.equalTo(self.loginButtonsBGView).offset(-4* AutoSizeScaleX);
         make.width.mas_equalTo(126* AutoSizeScaleX);
@@ -239,14 +239,9 @@
 }
 -(void) submitBtnClicked:(UIButton*)sender
 {
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Done"
-                                                                           message:nil
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-    
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
+    [_pwdTextField resignFirstResponder];
+    [ITUIApplicationKeyWindow makeToast:@"Incorrect username and password"];
+
 }
 -(void) registerBtnClicked:(UIButton*)sender
 {
@@ -264,7 +259,7 @@
 }
 
 - (void)editChanged:(UITextField *)textField {
-        [self submitBtnState];
+    [self submitBtnState];
 }
 
 #pragma mark - Private
@@ -277,6 +272,7 @@
         self.submitBtn.alpha = 1;
     }
 }
+
 
 
 #pragma mark - UITextFieldDelegate
