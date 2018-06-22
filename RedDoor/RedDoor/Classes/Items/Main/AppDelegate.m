@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "HomeViewController.h"
 #import "RegisterViewController.h"
+#import "WifiViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,9 +26,9 @@
     
 //    ICNavigationController *nav = [[ICNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
 //    self.window.rootViewController = nav;
-    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    WifiViewController *loginVC = [[WifiViewController alloc] init];
     self.window.rootViewController = loginVC;
-//    RegisterViewController *loginVC = [[RegisterViewController alloc] init];
+//   RegisterViewController *loginVC = [[RegisterViewController alloc] init];
 //    self.window.rootViewController = loginVC;
     
     return YES;

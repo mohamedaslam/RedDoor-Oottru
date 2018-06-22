@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RedDoor/Classes/Items/Login/RegisterViewController.m"
-            timestampString = "549870018.600943"
+            filePath = "RedDoor/Classes/Items/Home/WifiPasswordViewController.m"
+            timestampString = "551278890.777988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-configNickNameView"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RedDoor/Classes/Items/Login/RegisterViewController.m"
-            timestampString = "549870018.601019"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "-configNickNameView"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-submitBtnView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

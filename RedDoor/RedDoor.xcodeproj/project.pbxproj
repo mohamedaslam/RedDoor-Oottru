@@ -57,6 +57,11 @@
 		9AE6D7AD20C4D26200B58FD5 /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6D7A820C4D26200B58FD5 /* YBRectConst.m */; };
 		9AE6D7AE20C4D26200B58FD5 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6D7A920C4D26200B58FD5 /* YBPopupMenuPath.m */; };
 		9AE6D7AF20C4D26200B58FD5 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6D7AB20C4D26200B58FD5 /* YBPopupMenu.m */; };
+		AE6DA09120DBACF300704DE6 /* WifiSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA09020DBACF300704DE6 /* WifiSetupViewController.m */; };
+		AE6DA09320DBC8F100704DE6 /* wifi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE6DA09220DBC8F100704DE6 /* wifi.jpg */; };
+		AE6DA09620DBD45200704DE6 /* WifiPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA09520DBD45200704DE6 /* WifiPasswordViewController.m */; };
+		AE6DA09920DBD98000704DE6 /* WifiConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA09820DBD98000704DE6 /* WifiConnectionViewController.m */; };
+		AEDF61C620D3C9F700FAC80C /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDF61C520D3C9F700FAC80C /* WifiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +170,15 @@
 		9AE6D7AA20C4D26200B58FD5 /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
 		9AE6D7AB20C4D26200B58FD5 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
 		9AE6D7AC20C4D26200B58FD5 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+		AE6DA08F20DBACF300704DE6 /* WifiSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WifiSetupViewController.h; sourceTree = "<group>"; };
+		AE6DA09020DBACF300704DE6 /* WifiSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WifiSetupViewController.m; sourceTree = "<group>"; };
+		AE6DA09220DBC8F100704DE6 /* wifi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wifi.jpg; sourceTree = "<group>"; };
+		AE6DA09420DBD45200704DE6 /* WifiPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WifiPasswordViewController.h; sourceTree = "<group>"; };
+		AE6DA09520DBD45200704DE6 /* WifiPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WifiPasswordViewController.m; sourceTree = "<group>"; };
+		AE6DA09720DBD98000704DE6 /* WifiConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WifiConnectionViewController.h; sourceTree = "<group>"; };
+		AE6DA09820DBD98000704DE6 /* WifiConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WifiConnectionViewController.m; sourceTree = "<group>"; };
+		AEDF61C420D3C9F700FAC80C /* WifiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WifiViewController.h; sourceTree = "<group>"; };
+		AEDF61C520D3C9F700FAC80C /* WifiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +275,7 @@
 				9AE6D77A20C28C5E00B58FD5 /* ICNavigationController.h */,
 				9AE6D77B20C28C5E00B58FD5 /* ICNavigationController.m */,
 				9AE6D6D820BF8A2500B58FD5 /* main.m */,
+				AE6DA09220DBC8F100704DE6 /* wifi.jpg */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -460,6 +475,14 @@
 			children = (
 				9AE6D77D20C28F3C00B58FD5 /* HomeViewController.h */,
 				9AE6D77E20C28F3C00B58FD5 /* HomeViewController.m */,
+				AEDF61C420D3C9F700FAC80C /* WifiViewController.h */,
+				AEDF61C520D3C9F700FAC80C /* WifiViewController.m */,
+				AE6DA08F20DBACF300704DE6 /* WifiSetupViewController.h */,
+				AE6DA09020DBACF300704DE6 /* WifiSetupViewController.m */,
+				AE6DA09420DBD45200704DE6 /* WifiPasswordViewController.h */,
+				AE6DA09520DBD45200704DE6 /* WifiPasswordViewController.m */,
+				AE6DA09720DBD98000704DE6 /* WifiConnectionViewController.h */,
+				AE6DA09820DBD98000704DE6 /* WifiConnectionViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -578,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE6D73020BFC96800B58FD5 /* MasonryInfo.plist in Resources */,
+				AE6DA09320DBC8F100704DE6 /* wifi.jpg in Resources */,
 				9AE6D6D320BF8A2500B58FD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +615,7 @@
 			files = (
 				9AE6D7A220C41E7600B58FD5 /* PersonalInfoViewController.m in Sources */,
 				9AE6D77020C140F600B58FD5 /* UIView+Toast.m in Sources */,
+				AE6DA09120DBACF300704DE6 /* WifiSetupViewController.m in Sources */,
 				9AE6D74820BFDA7C00B58FD5 /* AFURLSessionManager.m in Sources */,
 				9AE6D73420BFC96800B58FD5 /* MASViewConstraint.m in Sources */,
 				9AE6D73520BFC96800B58FD5 /* MASViewAttribute.m in Sources */,
@@ -600,6 +625,7 @@
 				9AE6D75320BFEA7F00B58FD5 /* ITEncryption.m in Sources */,
 				9AE6D70F20BFC66300B58FD5 /* HexColors.m in Sources */,
 				9AE6D74A20BFDA7C00B58FD5 /* AFNetworkReachabilityManager.m in Sources */,
+				AEDF61C620D3C9F700FAC80C /* WifiViewController.m in Sources */,
 				9AE6D79E20C41B9C00B58FD5 /* NoticeViewController.m in Sources */,
 				9AE6D74620BFDA7C00B58FD5 /* AFURLResponseSerialization.m in Sources */,
 				9AE6D73120BFC96800B58FD5 /* NSArray+MASAdditions.m in Sources */,
@@ -623,10 +649,12 @@
 				9AE6D72E20BFC96800B58FD5 /* MASConstraintMaker.m in Sources */,
 				9AE6D73320BFC96800B58FD5 /* MASConstraint.m in Sources */,
 				9AE6D74B20BFDA7C00B58FD5 /* AFSecurityPolicy.m in Sources */,
+				AE6DA09620DBD45200704DE6 /* WifiPasswordViewController.m in Sources */,
 				9AE6D77820C27C5400B58FD5 /* RetrievePwdViewController.m in Sources */,
 				9AE6D72B20BFC96800B58FD5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				9AE6D78A20C3935B00B58FD5 /* MineViewController.m in Sources */,
 				9AE6D7AD20C4D26200B58FD5 /* YBRectConst.m in Sources */,
+				AE6DA09920DBD98000704DE6 /* WifiConnectionViewController.m in Sources */,
 				9AE6D7A520C4C55500B58FD5 /* PersonalInfoTableViewCell.m in Sources */,
 				9AE6D72F20BFC96800B58FD5 /* MASLayoutConstraint.m in Sources */,
 				9AE6D6CB20BF8A2400B58FD5 /* AppDelegate.m in Sources */,
